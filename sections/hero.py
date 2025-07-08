@@ -8,6 +8,59 @@ def get_base64_of_bin_file(bin_file):
 
 def render_hero(img_path):
     st.markdown(f"""
+    <style>
+    .hero-section {{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 0 12px 0;
+        font-size: 0.92em; /* Decreased overall font size */
+    }}
+    .hero-content {{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        font-size: 0.95em; /* Decreased font size */
+    }}
+    .hero-about-title {{
+        font-size: 1.1em; /* Decreased title size */
+        font-weight: 600;
+    }}
+    .hero-img-container {{
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 18px;
+    }}
+    .hero-img {{
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #c471f5;
+        box-shadow: 0 2px 12px #c471f555;
+    }}
+    @media (max-width: 700px) {{
+        .hero-section {{
+            flex-direction: column;
+            padding: 12px 0 6px 0;
+            font-size: 0.85em;
+        }}
+        .hero-img-container {{
+            margin-left: 0;
+            margin-top: 12px;
+        }}
+        .hero-img {{
+            width: 90px;
+            height: 90px;
+        }}
+    }}
+    </style>
     <div class="hero-section" id="home">
         <div class="hero-content">
             <div class="hero-about">
