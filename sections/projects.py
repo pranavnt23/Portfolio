@@ -100,12 +100,16 @@ def render_projects():
         .projects-grid {
             flex-direction: column;
             align-items: center;
+            width: 100vw;
+            margin: 0 auto;
         }
         .project-card {
             width: 95vw;
             min-width: 0;
             max-width: 98vw;
             padding: 1rem 0.7rem 0.7rem 0.7rem;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
     </style>
