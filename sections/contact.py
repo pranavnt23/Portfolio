@@ -13,8 +13,8 @@ def render_contact():
         padding: 36px 48px 28px 48px;
         color: #fff;
         font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
-        font-size: 1.22em;
-        font-weight: 500;
+        font-size: 0.82em;           /* Decreased font size */
+        font-weight: 200;
         line-height: 1.7;
         display: flex;
         flex-direction: column;
@@ -24,6 +24,23 @@ def render_contact():
         z-index: 2;
         animation: fade-in-up 1s ease-out 2.2s forwards;
         opacity: 0;
+    }
+    .contact-title {
+        font-size: 1.7em;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 18px;
+        letter-spacing: 1px;
+        font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+        text-shadow: 0 2px 12px #c471f555;
+        background: linear-gradient(90deg, #00e6ff 0%, #c471f5 100%);
+        padding: 0.3rem 1.2rem;
+        border-radius: 14px;
+        box-shadow: 0 2px 8px #c471f555;
+        width: fit-content;
+        animation: glow 2s infinite ease-in-out;
+        margin-left: auto;
+        margin-right: auto;
     }
     .contact-form {
         width: 100%;
@@ -41,6 +58,7 @@ def render_contact():
         text-align: left;
         width: 100%;
         max-width: 700px;
+        font-size: 1.15em;   /* Increased label font size for sub-headings */
     }
     .contact-form input, .contact-form textarea {
         width: 100%;
@@ -51,7 +69,7 @@ def render_contact():
         border: none;
         background: #f3eaff;
         color: #222;
-        font-size: 1.13em;
+        font-size: 0.87em;           /* Decreased input font size */
         font-family: inherit;
         outline: none;
         transition: box-shadow 0.2s;
@@ -72,8 +90,8 @@ def render_contact():
         border: none;
         border-radius: 10px;
         padding: 12px 32px;
-        font-size: 1.1em;
-        font-weight: 700;
+        font-size: 0.87em;           /* Decreased button text size */
+        font-weight: 400;
         cursor: pointer;
         transition: background 0.2s, transform 0.2s;
         box-shadow: 0 2px 8px #c471f555;
@@ -89,7 +107,7 @@ def render_contact():
         color: #00e6ff;
         font-weight: 700;
         margin-top: 18px;
-        font-size: 1.1em;
+        font-size: 0.85em;           /* Decreased success message size */
         text-align: center;
     }
     @media (max-width: 900px) {
@@ -106,7 +124,7 @@ def render_contact():
             padding: 18px 2vw 18px 2vw;
         }
         .contact-title {
-            font-size: 1.2em;
+            font-size: 1.1em;
             padding: 0.2rem 0.7rem;
         }
         .contact-form, .contact-form input, .contact-form textarea {
@@ -137,11 +155,11 @@ def render_contact():
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
     (function(){
-        emailjs.init("YOUR_PUBLIC_KEY"); // <-- Replace with your EmailJS public key
+        emailjs.init("1lJLdVfGcU1KdOtki "); // <-- Replace with your real public key!
     })();
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        emailjs.sendForm('service_bqqdkpj', 'template_v1mwfrh', this)
             .then(function() {
                 document.getElementById('contact-success').innerHTML = "Thank you! Your message has been sent.";
                 document.getElementById('contact-form').reset();
