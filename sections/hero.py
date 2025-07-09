@@ -7,6 +7,7 @@ def get_base64_of_bin_file(bin_file):
     return base64.b64encode(data).decode()
 
 def render_hero(img_path):
+    img_base64 = get_base64_of_bin_file(img_path)
     st.markdown(f"""
     <style>
     .hero-section {{
@@ -16,7 +17,7 @@ def render_hero(img_path):
         align-items: center;
         justify-content: center;
         padding: 24px 0 12px 0;
-        font-size: 0.92em; /* Decreased overall font size */
+        font-size: 0.92em;
     }}
     .hero-content {{
         flex: 1;
@@ -24,10 +25,10 @@ def render_hero(img_path):
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        font-size: 0.95em; /* Decreased font size */
+        font-size: 0.95em;
     }}
     .hero-about-title {{
-        font-size: 1.1em; /* Decreased title size */
+        font-size: 1.1em;
         font-weight: 600;
     }}
     .hero-img-container {{
@@ -71,7 +72,7 @@ def render_hero(img_path):
             </div>
         </div>
         <div class="hero-img-container">
-            <img src="{img_path}" alt="Profile Photo" class="hero-img">
+            <img src="data:image/png;base64,{img_base64}" alt="Profile Photo" class="hero-img">
         </div>
     </div>
     """, unsafe_allow_html=True)

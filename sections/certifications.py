@@ -86,6 +86,13 @@ def render_certifications():
         }
     }
     @media (max-width: 700px) {
+        .certifications-section {
+            max-width: 98vw;
+            width: 98vw;
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0 auto; /* Ensure section is centered */
+        }
         .certifications-title {
             font-size: 1.2em;
             padding: 0.2rem 0.7rem;
@@ -93,12 +100,19 @@ def render_certifications():
         .certifications-grid {
             flex-direction: column;
             align-items: center;
+            width: 100vw;
+            margin: 0 auto;
+            justify-content: center; /* Ensure grid is centered */
         }
         .cert-card {
-            width: 95vw;
+            width: 90vw;
             min-width: 0;
-            max-width: 98vw;
-            padding: 1rem 0.7rem 0.7rem 0.7rem;
+            max-width: 92vw;
+            padding: 0.7rem 0.3rem 0.5rem 0.3rem;
+            margin-left: auto;
+            margin-right: auto;
+            align-items: center;
+            box-sizing: border-box;
         }
     }
     </style>
