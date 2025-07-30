@@ -66,7 +66,9 @@ def render_hero(img_path):
         <div class="hero-content">
             <div class="hero-about">
                 <span class="hero-about-title">Myself</span><br>
-                Hi! I’m <b>Pranav</b>, a passionate and curious developer with a strong foundation in software engineering and a love for building impactful digital solutions.<br>
+                Hi! I’m <b>Pranav</b>,<br>
+                A soul who finds rhythm in singing and strength in workouts, blending creativity with discipline to lead a fulfilling life.<br>
+                Whether it’s a melody or a mindset, always tuned in to growth.<br><br>
                 I'm currently pursuing <b>M.Sc Software Systems (Integrated)</b> at <b>Coimbatore Institute of Technology</b>, where I’m honing both my technical and problem-solving skills.
                 <br><br>
             </div>

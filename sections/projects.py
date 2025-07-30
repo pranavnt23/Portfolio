@@ -3,15 +3,6 @@ import streamlit as st
 def render_projects():
     st.markdown("""
     <style>
-    .projects-section {
-        margin: 0 auto 36px auto;
-        max-width: 90vw;
-        width: 90vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        z-index: 2;
-    }
     .projects-title {
         font-size: 2em;
         font-weight: 700;
@@ -25,129 +16,85 @@ def render_projects():
         border-radius: 14px;
         box-shadow: 0 2px 8px #c471f555;
         width: fit-content;
-        animation: glow 2s infinite ease-in-out;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        text-align: center;
     }
-    .projects-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        justify-content: center;
-        width: 100%;
+    /* Style for Streamlit expanders */
+    .stExpander {
+        border-radius: 8px !important;
+        margin-bottom: 1.2rem !important;
+        box-shadow: 0 4px 24px #c471f555, 0 1.5px 8px #fff4 !important;
+        background: linear-gradient(160deg, #6a11cb 0%, #2575fc 100%) !important;
+
     }
-    .project-card {
-        background: linear-gradient(135deg, #8f5fd1 0%, #c471f5 100%);
-        border-radius: 18px;
-        box-shadow: 0 4px 24px #c471f555, 0 1.5px 8px #fff4;
-        padding: 2rem 1.5rem 1.5rem 1.5rem;
-        min-width: 290px;
-        max-width: 340px;
-        flex: 1 1 320px;
-        color: #fff;
-        font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        transition: transform 0.22s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.22s;
-        position: relative;
-        overflow: hidden;
-        margin-bottom: 0.5rem;
-    }
-    .project-card:hover {
-        transform: scale(1.04) translateY(-6px);
-        box-shadow: 0 8px 32px #00e6ff77, 0 2px 12px #fff7;
-    }
-    .project-icon {
-        font-size: 2.2em;
-        margin-bottom: 10px;
-        filter: drop-shadow(0 2px 8px #00e6ff66);
-    }
-    .project-title {
-        font-size: 1.25em;
-        font-weight: 700;
-        margin-bottom: 0.5em;
-        color: #fff;
+    .streamlit-expanderHeader {
+        background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%) !important;
+        color: #fff !important;
+        font-weight: 900 !important;
+        text-align: center !important;
+        border-radius: 16px 16px 0 0 !important;
+        font-size: 1.3em !important;
         letter-spacing: 1px;
-        text-shadow: 0 2px 8px #c471f555;
+        box-shadow: 0 2px 8px #a18cd188;
+        border-bottom: 2px solid #a18cd1 !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        padding: 1.2em 0 !important;
+        min-height: 60px !important;
     }
-    .project-desc {
-        font-size: 1.05em;
-        font-weight: 400;
-        margin-bottom: 0.7em;
-        color: #f3eaff;
-        line-height: 1.5;
-    }
-    .project-tech {
-        font-size: 0.98em;
-        color: #00e6ff;
-        font-weight: 600;
+    .streamlit-expanderContent {
+        background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%) !important;
+        color: #222 !important;
+        border-radius: 0 0 16px 16px !important;
+        font-size: 0.7em !important;
         margin-bottom: 0.5em;
-    }
-    @media (max-width: 900px) {
-        .projects-grid {
-            gap: 1.2rem;
-        }
-        .project-card {
-            min-width: 220px;
-            max-width: 95vw;
-            padding: 1.2rem 1rem 1rem 1rem;
-        }
-    }
-    @media (max-width: 700px) {
-        .projects-title {
-            font-size: 1.2em;
-            padding: 0.2rem 0.7rem;
-        }
-        .projects-grid {
-            flex-direction: column;
-            align-items: center;
-            width: 100vw;
-            margin: 0 auto;
-        }
-        .project-card {
-            width: 95vw;
-            min-width: 0;
-            max-width: 98vw;
-            padding: 1rem 0.7rem 0.7rem 0.7rem;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        text-align: center !important;
+        font-weight: 300 !important;
+        box-shadow: 0 2px 8px #ffd20055;
     }
     </style>
-    <div id="project" class="projects-section">
-        <div class="projects-title">🚀 Projects</div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-icon">💸</div>
-                <div class="project-title">FundVerse - ChitFund Platform</div>
-                <div class="project-desc">
-                    Developing a full stack Chitfund platform to efficiently automate operations, ensuring secure and streamlined processes for all stakeholders.
-                </div>
-                <div class="project-tech">#FullStack #Automation #Fintech</div>
-            </div>
-            <div class="project-card">
-                <div class="project-icon">✈️</div>
-                <div class="project-title">Flight Delay Prediction Model</div>
-                <div class="project-desc">
-                    Built a machine learning model using Linear Regression and Random Forest Classifier to predict flight delays based on past data and multiple scenarios.
-                </div>
-                <div class="project-tech">#ML #Regression #RandomForest</div>
-            </div>
-            <div class="project-card">
-                <div class="project-icon">🪑</div>
-                <div class="project-title">Seating Allocation System</div>
-                <div class="project-desc">
-                    Automated University Seating Allocation System in Java, streamlining seat assignments for exams and events, enhancing efficiency, accuracy, and fairness.
-                </div>
-                <div class="project-tech">#Java #Automation #University</div>
-            </div>
-            <div class="project-card">
-                <div class="project-icon">📊</div>
-                <div class="project-title">Flight Delay Analysis Dashboard</div>
-                <div class="project-desc">
-                    PowerBI dashboard visualizing flight delays based on various parameters, helping to analyze and understand delay patterns using historical data.
-                </div>
-                <div class="project-tech">#PowerBI #Visualization #Analytics</div>
-            </div>
-        </div>
-    </div>
+    <div class="projects-title" id="projects">🚀 Projects</div>
     """, unsafe_allow_html=True)
+
+    with st.expander("💸 FundVerse - ChitFund Platform"):
+        st.markdown("""
+        <div style="font-weight:700; text-align:center;">
+        Developing a full stack Chitfund platform to efficiently automate operations, ensuring secure and streamlined processes for all stakeholders.<br>
+        <a href="https://github.com/pranavnt23/ChitFund_Platform" target="_blank" style="display:inline-block;margin-top:8px;">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="28" style="vertical-align:middle;"/> 
+            <span style="font-size:1.1em;vertical-align:middle;font-weight:700;color:#222;margin-left:6px;">GitHub</span>
+        </a>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with st.expander("✈️ Flight Delay Prediction Model"):
+        st.markdown("""
+        <div style="font-weight:700; text-align:center;">
+        Built a machine learning model using Linear Regression and Random Forest Classifier to predict flight delays based on past data and multiple scenarios.<br>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with st.expander("🪑 Seating Allocation System"):
+        st.markdown("""
+        <div style="font-weight:700; text-align:center;">
+        Automated University Seating Allocation System in Java, streamlining seat assignments for exams and events, enhancing efficiency, accuracy, and fairness.<br>
+        <a href="https://github.com/pranavnt23/Seating_Allocation" target="_blank" style="display:inline-block;margin-top:8px;">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="28" style="vertical-align:middle;"/> 
+            <span style="font-size:1.1em;vertical-align:middle;font-weight:700;color:#222;margin-left:6px;">GitHub</span>
+        </a>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with st.expander("📊 Flight Delay Analysis Dashboard"):
+        st.markdown("""
+        <div style="font-weight:700; text-align:center;">
+        PowerBI dashboard visualizing flight delays based on various parameters, helping to analyze and understand delay patterns using historical data.<br>
+        <a href="https://drive.google.com/drive/folders/1V9X4I4ibsFfS0XzFrSbSYct267jzFg0q" target="_blank" style="display:inline-block;margin-top:8px;">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Drive" width="28" style="vertical-align:middle;"/> 
+            <span style="font-size:1.1em;vertical-align:middle;font-weight:700;color:#222;margin-left:6px;">Drive</span>
+        </a>
+        </div>
+        """, unsafe_allow_html=True)

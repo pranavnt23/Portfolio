@@ -7,6 +7,9 @@ from sections.skills import render_skills
 from sections.projects import render_projects
 from sections.certifications import render_certifications
 from sections.contact import render_contact
+from sections.education import render_education
+from sections.responsibilities import render_responsibilities
+from sections.experience import render_experience
 
 st.set_page_config(page_title="Pranav's Portfolio", page_icon="💡", layout="wide")  # FIRST!
 
@@ -17,6 +20,9 @@ def main():
     render_hero("assets/pic.jpg")
     render_about()
     render_skills()
+    render_education()
+    render_experience()
+    render_responsibilities()
     render_projects() 
     render_certifications()
     render_contact()

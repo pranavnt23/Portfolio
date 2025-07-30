@@ -62,17 +62,25 @@ def render_skills():
         letter-spacing: 0.5px;
     }
     .tech-python { background: radial-gradient(circle, #306998, #4B8BBE); }
+    .tech-cpp { background: radial-gradient(circle, #00599C, #002F5D); }
+    .tech-r { background: radial-gradient(circle, #276DC3, #183D5D); }
+    .tech-java { background: radial-gradient(circle, #f89820, #b07219); }
     .tech-js { background: radial-gradient(circle, #f0db4f, #323330); color: #000; }
-    .tech-dart { background: radial-gradient(circle, #00B4AB, #0175C2); }
-    .tech-flutter { background: linear-gradient(135deg, #02569B, #13B9FD); }
-    .tech-fastapi { background: linear-gradient(135deg, #059669, #10B981); }
+    .tech-node { background: linear-gradient(135deg, #3C873A, #68A063); }
+    .tech-express { background: linear-gradient(135deg, #444, #222); }
     .tech-react { background: radial-gradient(circle, #61DBFB, #20232a); }
+    .tech-fastapi { background: linear-gradient(135deg, #059669, #10B981); }
+    .tech-flutter { background: linear-gradient(135deg, #02569B, #13B9FD); }
+    .tech-vscode { background: linear-gradient(135deg, #007ACC, #1E1E2F); }
+    .tech-github { background: linear-gradient(135deg, #333, #6e5494); }
+    .tech-postman { background: linear-gradient(135deg, #FF6C37, #FFB88C); }
+    .tech-streamlit { background: linear-gradient(135deg, #FF4B4B, #FFB88C); }
     .tech-docker { background: linear-gradient(135deg, #2496ED, #1D63ED); }
-    .tech-git { background: linear-gradient(135deg, #F05032, #8F3F1F); }
-    .tech-firebase { background: radial-gradient(circle, #FFA000, #F57C00); }
     .tech-aws { background: linear-gradient(135deg, #FF9900, #232F3E); }
-    .tech-dynamodb { background: linear-gradient(135deg, #4053D6, #232F3E); }
+    .tech-mongodb { background: linear-gradient(135deg, #47A248, #013220); }
+    .tech-sql { background: linear-gradient(135deg, #336791, #2F5DAB); }
     .tech-postgresql { background: linear-gradient(135deg, #336791, #2F5DAB); }
+    .tech-dynamodb { background: linear-gradient(135deg, #4053D6, #232F3E); }
     @keyframes float {
         0% { transform: translateY(0px); }
         50% { transform: translateY(-8px); }
@@ -110,33 +118,40 @@ def render_skills():
         <div class="tech-category">
             <div class="category-title">Languages</div>
             <div class="tech-stack-grid">
+                <div class="tech-box tech-cpp"><div class="tech-icon">💻</div><div class="tech-name">C++</div></div>
                 <div class="tech-box tech-python"><div class="tech-icon">🐍</div><div class="tech-name">Python</div></div>
-                <div class="tech-box tech-js"><div class="tech-icon">✨</div><div class="tech-name">JavaScript</div></div>
-                <div class="tech-box tech-dart"><div class="tech-icon">🎯</div><div class="tech-name">Dart</div></div>
+                <div class="tech-box tech-r"><div class="tech-icon">📊</div><div class="tech-name">R</div></div>
+                <div class="tech-box tech-java"><div class="tech-icon">☕</div><div class="tech-name">Java</div></div>
             </div>
         </div>
         <div class="tech-category">
             <div class="category-title">Frameworks</div>
             <div class="tech-stack-grid">
-                <div class="tech-box tech-flutter"><div class="tech-icon">📱</div><div class="tech-name">Flutter</div></div>
-                <div class="tech-box tech-fastapi"><div class="tech-icon">⚡</div><div class="tech-name">FastAPI</div></div>
+                <div class="tech-box tech-node"><div class="tech-icon">🌲</div><div class="tech-name">Node.js</div></div>
                 <div class="tech-box tech-react"><div class="tech-icon">⚛️</div><div class="tech-name">React</div></div>
+                <div class="tech-box tech-express"><div class="tech-icon">🚂</div><div class="tech-name">Express.js</div></div>
+                <div class="tech-box tech-fastapi"><div class="tech-icon">⚡</div><div class="tech-name">FastAPI</div></div>
+                <div class="tech-box tech-flutter"><div class="tech-icon">📱</div><div class="tech-name">Flutter</div></div>
             </div>
         </div>
         <div class="tech-category">
             <div class="category-title">Tools</div>
             <div class="tech-stack-grid">
-                <div class="tech-box tech-git"><div class="tech-icon">🌱</div><div class="tech-name">Git</div></div>
+                <div class="tech-box tech-vscode"><div class="tech-icon">📝</div><div class="tech-name">VS Code</div></div>
+                <div class="tech-box tech-github"><div class="tech-icon">🐙</div><div class="tech-name">GitHub</div></div>
+                <div class="tech-box tech-postman"><div class="tech-icon">📬</div><div class="tech-name">Postman</div></div>
+                <div class="tech-box tech-streamlit"><div class="tech-icon">🎈</div><div class="tech-name">Streamlit</div></div>
                 <div class="tech-box tech-docker"><div class="tech-icon">🐳</div><div class="tech-name">Docker</div></div>
-                <div class="tech-box tech-firebase"><div class="tech-icon">🔥</div><div class="tech-name">Firebase</div></div>
                 <div class="tech-box tech-aws"><div class="tech-icon">☁️</div><div class="tech-name">AWS</div></div>
             </div>
         </div>
         <div class="tech-category">
             <div class="category-title">Database</div>
             <div class="tech-stack-grid">
-                <div class="tech-box tech-dynamodb"><div class="tech-icon">🔷</div><div class="tech-name">DynamoDB</div></div>
+                <div class="tech-box tech-mongodb"><div class="tech-icon">🍃</div><div class="tech-name">MongoDB</div></div>
+                <div class="tech-box tech-sql"><div class="tech-icon">🗄️</div><div class="tech-name">SQL</div></div>
                 <div class="tech-box tech-postgresql"><div class="tech-icon">🐘</div><div class="tech-name">PostgreSQL</div></div>
+                <div class="tech-box tech-dynamodb"><div class="tech-icon">🔷</div><div class="tech-name">DynamoDB</div></div>
             </div>
         </div>
     </div>

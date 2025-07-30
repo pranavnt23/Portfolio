@@ -25,23 +25,6 @@ def render_contact():
         animation: fade-in-up 1s ease-out 2.2s forwards;
         opacity: 0;
     }
-    .contact-title {
-        font-size: 1.7em;
-        font-weight: 700;
-        color: #fff;
-        margin-bottom: 18px;
-        letter-spacing: 1px;
-        font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
-        text-shadow: 0 2px 12px #c471f555;
-        background: linear-gradient(90deg, #00e6ff 0%, #c471f5 100%);
-        padding: 0.3rem 1.2rem;
-        border-radius: 14px;
-        box-shadow: 0 2px 8px #c471f555;
-        width: fit-content;
-        animation: glow 2s infinite ease-in-out;
-        margin-left: auto;
-        margin-right: auto;
-    }
     .contact-form {
         width: 100%;
         max-width: 750px; /* Make the form itself wide */
@@ -99,6 +82,59 @@ def render_contact():
         min-width: 180px;
         max-width: 300px;
     }
+    /* About section box */
+    .contact-section-box {
+        background: rgba(20, 18, 38, 0.82);
+        border-radius: 24px;
+        box-shadow: 0 4px 24px #c471f555, 0 1.5px 8px #fff4;
+        padding: 32px 36px 28px 36px;
+        margin: 0 auto 36px auto;
+        max-width: 600px;
+        width: 95vw;
+        color: #fff;
+        font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
+        font-size: 1.05em;
+        font-weight: 500;
+        line-height: 1.7;
+        position: relative;
+        top: 0;
+        z-index: 2;
+        border: 2.5px solid #c471f5;
+        transition: box-shadow 0.3s;
+        opacity: 0;
+        animation: fade-in-up 1s ease-out 2s forwards;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .contact-title {
+        font-size: 1.5em;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 12px;
+        letter-spacing: 1px;
+        font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+        text-shadow: 0 2px 12px #c471f555;
+        position: relative;
+        transition: color 0.2s;
+    }
+    .contact-title::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #00e6ff 0%, #c471f5 100%);
+        border-radius: 2px;
+        transition: width 0.35s cubic-bezier(.77,0,.18,1);
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+    }
+    .contact-section-box:hover .contact-title::after,
+    .contact-section-box:focus-within .contact-title::after {
+        width: 100%;
+    }
     .contact-form button:hover {
         background: linear-gradient(90deg, #c471f5 0%, #00e6ff 100%);
         transform: scale(1.04);
@@ -135,8 +171,8 @@ def render_contact():
     """, unsafe_allow_html=True)
 
     st.markdown("""
-    <div id="contact" class="contact-section">
-        <div class="contact-title">📬 Contact Me</div>
+    <div id="contact" class="contact-section-box">
+        <div class="contact-title" style="margin-bottom:2.2rem;">📞 Contact Me</div>
         <form class="contact-form" id="contact-form">
             <label for="name">Name</label>
             <input type="text" id="name" name="user_name" required placeholder="Your Name" />

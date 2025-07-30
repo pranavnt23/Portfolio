@@ -1,5 +1,5 @@
 import streamlit as st
-
+import base64
 def render_about():
     st.markdown("""
     <div id="about" class="about-section-box">

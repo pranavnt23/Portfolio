@@ -12,6 +12,24 @@ def render_certifications():
         align-items: center;
         z-index: 2;
     }
+    .projects-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 18px;
+        letter-spacing: 1px;
+        font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+        text-shadow: 0 2px 12px #c471f555;
+        background: linear-gradient(90deg, #8f5fd1 0%, #c471f5 100%);
+        padding: 0.3rem 1.2rem;
+        border-radius: 14px;
+        box-shadow: 0 2px 8px #c471f555;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        text-align: center;
+    }
     .certifications-title {
         font-size: 2em;
         font-weight: 700;
@@ -20,12 +38,29 @@ def render_certifications():
         letter-spacing: 1px;
         font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
         text-shadow: 0 2px 12px #c471f555;
-        background: linear-gradient(90deg, #00e6ff 0%, #c471f5 100%);
+        background: linear-gradient(90deg, #8f5fd1 0%, #c471f5 100%);
         padding: 0.3rem 1.2rem;
         border-radius: 14px;
         box-shadow: 0 2px 8px #c471f555;
         width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        text-align: center;
         animation: glow 2s infinite ease-in-out;
+        transition: transform 0.18s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.18s;
+        cursor: pointer;
+        position: relative;
+    }
+    @keyframes glow {
+        0% { box-shadow: 0 0 10px #c471f5; }
+        50% { box-shadow: 0 0 24px #8f5fd1, 0 0 32px #c471f5; }
+        100% { box-shadow: 0 0 10px #c471f5; }
+    }
+    .certifications-title:hover {
+        transform: scale(1.045) rotate(-1deg);
+        box-shadow: 0 8px 32px #8f5fd177, 0 2px 12px #c471f577;
+        z-index: 2;
     }
     .certifications-grid {
         display: flex;
@@ -119,21 +154,39 @@ def render_certifications():
     <div id="certifications" class="certifications-section">
         <div class="certifications-title">🎓 Certifications</div>
         <div class="certifications-grid">
-            <div class="cert-card">
-                <div class="cert-icon">🤖</div>
-                <div class="cert-title">Machine Learning</div>
-                <div class="cert-org">Certificate</div>
-            </div>
-            <div class="cert-card">
-                <div class="cert-icon">☁️</div>
-                <div class="cert-title">Google Cloud Study Jam</div>
-                <div class="cert-org">Google Cloud</div>
-            </div>
-            <div class="cert-card">
-                <div class="cert-icon">🐍</div>
-                <div class="cert-title">The Joy of Computing Using Python</div>
-                <div class="cert-org">NPTEL</div>
-            </div>
+            <a href="https://drive.google.com/file/d/1f5eEXBiPa7gWiLgzUWYe4qScNNkKp8kb/view?usp=sharing" target="_blank" style="text-decoration:none;">
+                <div class="cert-card" style="cursor:pointer;">
+                    <div class="cert-icon">🤖</div>
+                    <div class="cert-title">Machine Learning</div>
+                    <div class="cert-org">Certificate</div>
+                    <div style="margin-top:8px;">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Drive" width="28" style="vertical-align:middle;"/>
+                        <span style="font-size:1.1em;vertical-align:middle;font-weight:700;color:#fff;margin-left:6px;">View</span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://drive.google.com/file/d/1UOB0rWG9Vs1T44uZ3N6MH7gD2s8rGIos/view?usp=sharing" target="_blank" style="text-decoration:none;">
+                <div class="cert-card" style="cursor:pointer;">
+                    <div class="cert-icon">☁️</div>
+                    <div class="cert-title">Google Cloud Study Jam</div>
+                    <div class="cert-org">Google Cloud</div>
+                    <div style="margin-top:8px;">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Drive" width="28" style="vertical-align:middle;"/>
+                        <span style="font-size:1.1em;vertical-align:middle;font-weight:700;color:#fff;margin-left:6px;">View</span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://drive.google.com/file/d/1-rXH-UupyQyhcWmbAENMCHBDE3xJuZhK/view?usp=sharing" target="_blank" style="text-decoration:none;">
+                <div class="cert-card" style="cursor:pointer;">
+                    <div class="cert-icon">🐍</div>
+                    <div class="cert-title">The Joy of Computing Using Python</div>
+                    <div class="cert-org">NPTEL</div>
+                    <div style="margin-top:8px;">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Drive" width="28" style="vertical-align:middle;"/>
+                        <span style="font-size:1.1em;vertical-align:middle;font-weight:700;color:#fff;margin-left:6px;">View</span>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
     """, unsafe_allow_html=True)

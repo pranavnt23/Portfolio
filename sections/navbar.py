@@ -42,7 +42,19 @@ def render_navbar():
             <img src="https://img.icons8.com/ios-filled/20/ffffff/maintenance.png" alt="Skills" class="nav-icon" />
             Skills
         </a>
-        <a class="nav-link" href="#project">
+        <a class="nav-link" href="#education">
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/graduation-cap.png" alt="Education" class="nav-icon" />
+            Education
+        </a>
+        <a class="nav-link" href="#experience">
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/briefcase.png" alt="Experience" class="nav-icon" />
+            Experience
+        </a>
+        <a class="nav-link" href="#responsibilities">
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/task.png" alt="Responsibilities" class="nav-icon" />
+            Responsibilities
+        </a>
+        <a class="nav-link" href="#projects">
             <img src="https://img.icons8.com/ios-filled/20/ffffff/project.png" alt="Project" class="nav-icon" />
             Project
         </a>
