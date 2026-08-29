@@ -3,7 +3,7 @@ import streamlit as st
 def render_responsibilities():
     st.markdown("""
     <div class="resp-section" id="responsibilities">
-        <div class="resp-title">🤝 Club Responsibilities</div>
+        <div class="resp-title">🏆 Leadership & Activities</div>
         <div class="resp-card">
             <div class="resp-role">Content Writer</div>
             <div class="resp-org">FOSS CIT</div>

@@ -7,7 +7,7 @@ def render_about():
             🧑‍💻 About Me
         </div>
         <div class="about-content">
-            Streamlined software developer with strong coding and application development skills, efficient in problem-solving and eager to explore new opportunities in the software industry.
+            Software developer drawn to the space where ideas become real working solutions. Experienced in application development, AI systems, and cloud platforms, with a problem-solving mindset and a drive to turn ideas into technology that shapes what comes next.
             <br><br><span class="about-interests-title">🔍 I’m particularly interested in:</span>
             <ul class="about-interests-list">
                 <li>

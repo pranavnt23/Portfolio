@@ -9,7 +9,7 @@ def render_experience():
             <div class="exp-org">Satyukt Analytics Private Limited</div>
             <div class="exp-details">2025/06 - 2025/11 | Bengaluru, India</div>
             <div class="exp-desc">
-                Satyukt is a pioneering agri-tech company that leverages satellite data, advanced technology, and machine learning to provide innovative SaaS solutions.
+                Developed backend APIs and Python services for Sat2Farm and ERP, implementing AWS cloud solutions with Lambda, API Gateway, DynamoDB, EC2, S3, and IAM, while automating workflows through EventBridge and Python scripts with SQL operations and deployments.
             </div>
         </div>
         <div class="exp-card">

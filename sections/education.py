@@ -8,7 +8,7 @@ def render_education():
             <div class="edu-degree">M.Sc. Software Systems (Integrated)</div>
             <div class="edu-institute">Coimbatore Institute of Technology</div>
             <div class="edu-details">2022/10 – Present | Coimbatore, India</div>
-            <div class="edu-score">CGPA: 8.395 <span style="font-size:0.95em;font-weight:400;">(Till 5th sem)</span></div>
+            <div class="edu-score">CGPA: 8.43 <span style="font-size:0.95em;font-weight:400;">(Till 8th Semester)</span></div>
         </div>
         <div class="edu-card">
             <div class="edu-degree">Higher Secondary - 12th Grade</div>
