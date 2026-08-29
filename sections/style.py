@@ -13,6 +13,7 @@ def inject_css():
         --card-bg: rgba(24, 24, 28, 0.45);
         --card-border: rgba(255, 255, 255, 0.08);
         --navbar-bg: rgba(15, 15, 17, 0.5);
+        --navbar-bg-mobile: rgba(15, 15, 17, 0.98);
         --navbar-border: rgba(255, 255, 255, 0.08);
         --accent-color: #f1f5f9;
         --accent-hover: #ffffff;
@@ -31,6 +32,7 @@ def inject_css():
         --card-bg: rgba(255, 255, 255, 0.45);
         --card-border: rgba(0, 0, 0, 0.06);
         --navbar-bg: rgba(255, 255, 255, 0.5);
+        --navbar-bg-mobile: rgba(255, 255, 255, 0.98);
         --navbar-border: rgba(0, 0, 0, 0.06);
         --accent-color: #1c1c1e;
         --accent-hover: #000000;
@@ -656,7 +658,7 @@ def inject_css():
             left: 0 !important;
             width: 100% !important;
             height: auto !important;
-            background: var(--navbar-bg) !important;
+            background: var(--navbar-bg-mobile) !important;
             backdrop-filter: blur(20px) !important;
             -webkit-backdrop-filter: blur(20px) !important;
             border: 1px solid var(--navbar-border) !important;
