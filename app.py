@@ -17,7 +17,7 @@ inject_css()  # Now inject CSS
 
 def main():
     render_navbar()
-    render_hero("assets/pic.jpg")
+    render_hero("assets/pic.jpeg")
     render_about()
     render_skills()
     render_education()

@@ -5,38 +5,38 @@ def inject_css():
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&display=swap');
     
-    /* Theme variables - Pure Black & White Aesthetic */
+    /* Theme variables - iOS Glassmorphic Aesthetic */
     :root {
-        --bg-color: #0f0f11;
+        --bg-gradient: radial-gradient(circle at 10% 20%, #16122c 0%, #070709 50%), radial-gradient(circle at 90% 80%, #0d1e36 0%, #070709 50%);
         --text-color: #e5e5e7;
         --text-secondary: #9ca3af;
-        --card-bg: #18181c;
-        --card-border: #2e2e33;
-        --navbar-bg: rgba(15, 15, 17, 0.85);
-        --navbar-border: #222226;
+        --card-bg: rgba(24, 24, 28, 0.45);
+        --card-border: rgba(255, 255, 255, 0.08);
+        --navbar-bg: rgba(15, 15, 17, 0.5);
+        --navbar-border: rgba(255, 255, 255, 0.08);
         --accent-color: #f1f5f9;
         --accent-hover: #ffffff;
         --accent-text: #6366f1;
-        --input-bg: #121214;
-        --input-border: #2e2e33;
+        --input-bg: rgba(18, 18, 20, 0.6);
+        --input-border: rgba(255, 255, 255, 0.08);
         --btn-bg: #e5e5e7;
         --btn-text: #0f0f11;
         --btn-hover-bg: #ffffff;
     }
     
     body.light-theme {
-        --bg-color: #ffffff;
+        --bg-gradient: radial-gradient(circle at 10% 20%, #f4f3ff 0%, #f9f9fb 50%), radial-gradient(circle at 90% 80%, #ebf5ff 0%, #f9f9fb 50%);
         --text-color: #1c1c1e;
         --text-secondary: #6b7280;
-        --card-bg: #f9f9fb;
-        --card-border: #e5e5ea;
-        --navbar-bg: rgba(255, 255, 255, 0.85);
-        --navbar-border: #e5e5ea;
+        --card-bg: rgba(255, 255, 255, 0.45);
+        --card-border: rgba(0, 0, 0, 0.06);
+        --navbar-bg: rgba(255, 255, 255, 0.5);
+        --navbar-border: rgba(0, 0, 0, 0.06);
         --accent-color: #1c1c1e;
         --accent-hover: #000000;
         --accent-text: #4f46e5;
-        --input-bg: #ffffff;
-        --input-border: #d1d1d6;
+        --input-bg: rgba(255, 255, 255, 0.6);
+        --input-border: rgba(0, 0, 0, 0.06);
         --btn-bg: #1c1c1e;
         --btn-text: #ffffff;
         --btn-hover-bg: #000000;
@@ -47,19 +47,21 @@ def inject_css():
         scroll-behavior: smooth !important;
     }
     
-    html, body, .stApp {
+    html, body {
         height: 100%;
         min-height: 100vh;
-        background-color: var(--bg-color) !important;
-        background-image: none !important;
+        background-image: var(--bg-gradient) !important;
+        background-attachment: fixed !important;
+        background-size: cover !important;
         color: var(--text-color) !important;
         font-family: 'Inter', -apple-system, sans-serif !important;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transition: background-image 0.3s ease, color 0.3s ease;
     }
     
-    /* Global overrides for Streamlit dynamic parent components */
-    .stApp, [data-testid="stAppViewContainer"] {
-        background-color: var(--bg-color) !important;
+    /* Streamlit transparency overhaul for watery look */
+    .stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"], [data-testid="stHeader"], .main, .block-container {
+        background-color: transparent !important;
+        background-image: none !important;
         color: var(--text-color) !important;
     }
     
@@ -91,76 +93,78 @@ def inject_css():
     }
     
     /* Fixed Header Background */
-    .navbar-header-bg {
+    /* Floating Capsule Navbar */
+    .navbar-capsule {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 70px;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95% !important;
+        max-width: 1200px;
+        height: 60px;
         background: var(--navbar-bg) !important;
-        backdrop-filter: blur(12px) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
-        z-index: 999;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        border-bottom: 1px solid var(--navbar-border);
-        display: flex;
-        align-items: center;
-        transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
-    
-    .navbar-header-content {
-        display: flex;
-        align-items: center;
-        height: 70px;
-        max-width: 100vw;
-        padding-left: 32px;
-        z-index: 1001;
-        position: relative;
-    }
-    
-    .navbar-logo {
-        width: 32px !important;
-        height: 32px !important;
-        margin-right: 10px !important;
-        vertical-align: middle;
-        border-radius: 50%;
-        background: #ffffff !important;
-        object-fit: cover;
-        padding: 3px !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
         border: 1px solid var(--navbar-border) !important;
+        border-radius: 30px !important;
+        z-index: 9999;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-sizing: border-box;
+    }
+    
+    .navbar-logo-name {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-right: 40px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* Elevate stacking context of navbar capsule wrapper */
+    div[data-testid="element-container"]:has(.navbar-capsule),
+    div[data-testid="stVerticalBlock"] > div:has(.navbar-capsule) {
+        z-index: 99999 !important;
+        position: relative !important;
+        overflow: visible !important;
+    }
+    
+    .navbar-profile-image {
+        width: 42px !important;
+        height: 42px !important;
+        margin-right: 12px !important;
+        vertical-align: middle !important;
+        border-radius: 50% !important;
+        object-fit: cover !important;
+        background: #ffffff !important;
+        border: 2px solid #ffffff !important;
+        box-shadow: 0 0 0 1px var(--navbar-border), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+        display: inline-block !important;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.15s ease, visibility 0.15s ease;
     }
     
     .navbar-name {
         font-family: 'Playfair Display', serif;
-        font-size: 1.6em;
+        font-size: 1.4em;
         font-weight: 700;
         color: var(--accent-color);
         letter-spacing: 0.5px;
-        margin-right: 36px;
         user-select: none;
-        transition: color 0.3s ease;
     }
     
     /* Navbar Navigation Links */
-    .navbar {
+    .navbar-links-container {
         display: flex;
-        justify-content: flex-end;
         align-items: center;
-        flex-wrap: wrap;
-        gap: 20px !important;
-        margin-bottom: 0px;
-        margin-top: 0px;
-        padding-right: 3vw;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        background: none;
-        box-shadow: none;
-        height: 70px;
+        gap: 8px !important;
+        flex-shrink: 1 !important;
+        margin-left: auto !important;
     }
     
     .nav-link {
@@ -170,12 +174,13 @@ def inject_css():
         border: none;
         border-radius: 0;
         font-weight: 500;
-        font-size: 0.95em !important;
+        font-size: 0.8em !important;
         font-family: 'Inter', sans-serif !important;
+        white-space: nowrap !important;
         text-decoration: none !important;
         box-shadow: none;
         margin: 0;
-        padding: 0 4px 6px 4px !important;
+        padding: 4px 6px !important;
         position: relative;
         transition: color 0.3s, transform 0.3s;
         text-transform: capitalize;
@@ -204,31 +209,36 @@ def inject_css():
     }
     
     .nav-icon-emoji {
-        font-size: 1.1em !important;
-        margin-right: 6px !important;
+        font-size: 1.05em !important;
+        margin-right: 4px !important;
         vertical-align: middle;
         display: inline-block;
     }
     
     /* Theme Toggle Button */
     .theme-toggle-btn {
-        background: var(--card-bg) !important;
-        border: 1px solid var(--card-border) !important;
+        background: var(--navbar-bg) !important;
+        border: 1px solid var(--navbar-border) !important;
         color: var(--text-color) !important;
-        padding: 6px 12px !important;
-        border-radius: 20px !important;
-        font-size: 1em !important;
+        font-size: 0.95em !important;
         cursor: pointer !important;
-        display: inline-flex !important;
+        display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        transition: all 0.3s ease !important;
-        margin-left: 10px !important;
+        width: 34px !important;
+        height: 34px !important;
+        border-radius: 50% !important;
+        transition: transform 0.2s, background-color 0.2s !important;
+        margin-left: 12px !important;
         outline: none !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
     }
     .theme-toggle-btn:hover {
+        transform: scale(1.1) !important;
+        background-color: var(--card-border) !important;
         border-color: var(--accent-color) !important;
-        transform: scale(1.05);
     }
     
     /* Mobile Hamburger Menu Icon (3 lines) */
@@ -237,12 +247,8 @@ def inject_css():
         background: none !important;
         border: none !important;
         color: var(--text-color) !important;
-        font-size: 1.8em !important;
+        font-size: 1.6em !important;
         cursor: pointer !important;
-        position: absolute !important;
-        right: 24px !important;
-        top: 15px !important;
-        z-index: 1002 !important;
         outline: none !important;
         transition: transform 0.2s ease !important;
     }
@@ -265,67 +271,68 @@ def inject_css():
     /* Hero Section */
     .hero-section {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        gap: 40px;
+        text-align: center;
         padding: 40px 0;
         width: 100%;
+        box-sizing: border-box;
+        position: relative;
     }
     
-    .hero-content {
-        flex: 1;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
+    .hero-profile-image {
+        width: 260px !important;
+        height: 260px !important;
+        border-radius: 24px !important;
+        object-fit: cover !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25) !important;
+        border: 4px solid var(--card-bg) !important;
+        display: block !important;
+        margin: 0 auto 30px auto !important;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+    
+    .hero-profile-image:hover {
+        transform: scale(1.03);
     }
     
     .hero-about {
-        flex: 1.2;
-        padding-right: 20px;
+        max-width: 750px;
         font-size: 1.1em;
         line-height: 1.7;
-        color: var(--text-secondary);
+        color: var(--text-color);
+        position: relative;
+        z-index: 2;
+        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        margin-top: 15px; /* Clean spacing below profile picture */
     }
     
     .hero-about-title {
         display: block;
         font-family: 'Playfair Display', serif;
-        font-size: 1.4em;
+        font-size: 1.3em;
         font-weight: 500;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        color: var(--text-color);
-        margin-bottom: 12px;
+        letter-spacing: 3px;
+        color: var(--accent-color);
+        margin-bottom: 16px;
     }
     
     .hero-name {
         color: var(--accent-color);
         font-weight: 800;
-        font-size: 2.5em;
+        font-size: 3em;
         line-height: 1.2;
+        margin-bottom: 20px;
+        font-family: 'Playfair Display', serif;
     }
     
-    .hero-pic-container {
-        flex: 0.8;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .hero-pic {
-        width: 250px;
-        height: 250px;
-        border-radius: 24px;
-        object-fit: cover;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        border: 1px solid var(--card-border);
-        transition: transform 0.3s ease;
-    }
-    .hero-pic:hover {
-        transform: translateY(-5px);
+    .hero-bio {
+        font-size: 1.05em;
+        color: var(--text-secondary);
+        margin: 0;
     }
     
     /* Sections Headers */
@@ -356,14 +363,16 @@ def inject_css():
         border-radius: 16px !important;
         padding: 2rem !important;
         margin-bottom: 20px !important;
-        transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
     }
     
     .edu-card:hover, .exp-card:hover, .resp-card:hover, .about-section-box:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-        border-color: var(--text-secondary) !important;
+        transform: translateY(-3px) scale(1.01);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1) !important;
+        border-color: var(--accent-color) !important;
     }
     
     /* About Box Specifics */
@@ -394,20 +403,23 @@ def inject_css():
         width: 100%;
     }
     .tech-box {
-        background-color: var(--card-bg);
-        border: 1px solid var(--card-border);
-        border-radius: 10px;
-        padding: 10px 14px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        transition: all 0.2s ease-in-out;
-        justify-content: flex-start;
+        background-color: var(--card-bg) !important;
+        border: 1px solid var(--card-border) !important;
+        border-radius: 10px !important;
+        padding: 10px 14px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        transition: all 0.3s ease !important;
+        justify-content: flex-start !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
     }
     .tech-box:hover {
-        border-color: var(--accent-color);
-        background-color: var(--bg-color);
-        transform: translateY(-2px);
+        border-color: var(--accent-color) !important;
+        background-color: var(--card-bg) !important;
+        transform: translateY(-2px) scale(1.02) !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
     }
     .tech-icon {
         font-size: 1.1em;
@@ -459,11 +471,56 @@ def inject_css():
         margin-top: 30px;
     }
     /* Streamlit expander override to fit B&W system */
-    .data-testid[data-testid="stExpander"] {
-        border-color: var(--card-border) !important;
+    div[data-testid="stExpander"] {
+        border: 1px solid var(--card-border) !important;
         background-color: var(--card-bg) !important;
         border-radius: 12px !important;
         margin-bottom: 12px !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+    }
+    
+    div[data-testid="stExpander"] details {
+        border: none !important;
+        background-color: transparent !important;
+    }
+    
+    div[data-testid="stExpander"] summary {
+        background-color: transparent !important;
+        color: var(--text-color) !important;
+        border-radius: 12px !important;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    /* Ensure summary text elements are styled correctly */
+    div[data-testid="stExpander"] summary span,
+    div[data-testid="stExpander"] summary p,
+    div[data-testid="stExpander"] summary label,
+    div[data-testid="stExpander"] summary div {
+        color: var(--text-color) !important;
+    }
+    
+    /* Ensure toggle arrow chevron matches text color */
+    div[data-testid="stExpander"] summary svg {
+        color: var(--text-color) !important;
+        fill: var(--text-color) !important;
+    }
+    
+    /* Styling when expanded or hovered to prevent dark background in bright mode */
+    div[data-testid="stExpander"] summary:hover,
+    div[data-testid="stExpander"] summary:focus,
+    div[data-testid="stExpander"] details[open] > summary {
+        background-color: transparent !important;
+        color: var(--text-color) !important;
+    }
+
+    div[data-testid="stExpander"] [data-testid="stExpanderDetails"] {
+        background-color: transparent !important;
+        color: var(--text-color) !important;
+        border-radius: 0 0 12px 12px !important;
+        border-top: 1px solid var(--card-border) !important;
+        padding: 1.5rem !important;
     }
     
     /* Certifications Styling */
@@ -476,20 +533,24 @@ def inject_css():
         gap: 20px;
     }
     .cert-card {
-        background-color: var(--card-bg);
-        border: 1px solid var(--card-border);
-        border-radius: 14px;
-        padding: 1.5rem;
-        transition: transform 0.2s, border-color 0.2s;
+        background-color: var(--card-bg) !important;
+        border: 1px solid var(--card-border) !important;
+        border-radius: 14px !important;
+        padding: 1.5rem !important;
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
         text-decoration: none !important;
         color: inherit !important;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05) !important;
     }
     .cert-card:hover {
-        transform: translateY(-3px);
-        border-color: var(--accent-color);
+        transform: translateY(-3px) scale(1.02) !important;
+        border-color: var(--accent-color) !important;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1) !important;
     }
     .cert-title {
         font-size: 1.1em;
@@ -569,93 +630,77 @@ def inject_css():
     }
     
     /* Responsive Media Queries (Mobile First) */
-    @media (max-width: 1024px) {
+    @media (max-width: 1200px) {
         .block-container {
             padding-left: 24px !important;
             padding-right: 24px !important;
         }
-    }
-    
-    @media (max-width: 768px) {
+        
         .menu-toggle-btn {
             display: block !important;
         }
         
-        .navbar-header-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 70px !important;
-            background: var(--navbar-bg) !important;
-            border-bottom: 1px solid var(--navbar-border);
-            z-index: 999;
-            display: flex;
-            flex-direction: row !important;
-            align-items: center !important;
-            justify-content: flex-start !important;
-            padding: 0 !important;
+        .navbar-capsule {
+            width: 95% !important;
+            height: 55px !important;
+            top: 10px !important;
+            padding: 0 16px !important;
+            border-radius: 20px !important;
         }
         
-        .navbar-header-content {
-            padding-left: 24px !important;
-            margin-bottom: 0 !important;
-            height: 70px !important;
-            display: flex;
-            align-items: center;
-        }
-        
-        .navbar {
+        .navbar-links-container {
             display: none !important;
             flex-direction: column !important;
-            position: fixed !important;
-            top: 70px !important;
+            position: absolute !important;
+            top: 65px !important;
             left: 0 !important;
             width: 100% !important;
             height: auto !important;
             background: var(--navbar-bg) !important;
-            border-bottom: 1px solid var(--navbar-border) !important;
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
+            border: 1px solid var(--navbar-border) !important;
+            border-radius: 20px !important;
             padding: 20px 0 !important;
-            gap: 12px !important;
-            z-index: 1000 !important;
-            backdrop-filter: blur(12px) !important;
-            -webkit-backdrop-filter: blur(12px) !important;
+            gap: 10px !important;
+            z-index: 9999 !important;
             align-items: center !important;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.2) !important;
+            box-sizing: border-box !important;
         }
         
-        .navbar.active {
+        .navbar-links-container.active {
             display: flex !important;
         }
         
+        .nav-link:after {
+            display: none !important;
+        }
+        
         .block-container {
-            padding-top: 110px !important;
+            padding-top: 100px !important;
             padding-left: 16px !important;
             padding-right: 16px !important;
         }
         
         .hero-section {
-            flex-direction: column !important;
-            text-align: center !important;
-            gap: 30px !important;
-            padding: 20px 0 !important;
+            padding: 30px 0 20px 0 !important;
+            gap: 20px !important;
         }
         
-        .hero-content {
-            flex-direction: column !important;
-        }
-        
-        .hero-pic-container {
-            order: -1; /* Move profile picture on top of text */
-            margin-bottom: 10px !important;
+        .hero-profile-image {
+            width: 180px !important;
+            height: 180px !important;
+            border-radius: 24px !important;
+            margin-bottom: 20px !important;
         }
         
         .hero-about {
-            padding-right: 0 !important;
+            margin-top: -5vh !important;
         }
         
         .hero-name {
-            font-size: 2em !important;
+            font-size: 2.2em !important;
         }
         
         .about-title, .edu-title, .exp-title, .resp-title, .projects-title, .certifications-title, .contact-title {
@@ -687,21 +732,23 @@ def inject_css():
             width: 100% !important;
             text-align: center !important;
             font-size: 1em !important;
-            padding: 12px 0 !important; /* Ensure min height target */
+            padding: 10px 0 !important;
         }
         
         .theme-toggle-btn {
-            padding: 8px 16px !important;
-            margin-left: 0 !important;
-            margin-top: 10px !important;
-            width: 80% !important;
-            max-width: 200px !important;
+            margin-left: auto !important;
+            margin-right: 12px !important;
+            margin-top: 0 !important;
+            width: 34px !important;
+            height: 34px !important;
+            border-radius: 50% !important;
+            padding: 0 !important;
         }
     }
     
     @media (max-width: 480px) {
         .hero-name {
-            font-size: 1.7em !important;
+            font-size: 1.8em !important;
         }
         
         .about-title, .edu-title, .exp-title, .resp-title, .projects-title, .certifications-title, .contact-title {
@@ -713,13 +760,15 @@ def inject_css():
         }
         
         .navbar-name {
-            font-size: 1.4em !important;
+            font-size: 1.2em !important;
         }
         
-        .hero-pic {
-            width: 180px !important;
-            height: 180px !important;
+        .hero-profile-image {
+            width: 140px !important;
+            height: 140px !important;
+            margin-bottom: 15px !important;
         }
+    }
     </style>
     <script>
     (function() {
