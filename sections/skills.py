@@ -1,65 +1,9 @@
 import streamlit as st
 
 def render_skills():
-    st.markdown("""
-<div id="skills" class="about-section-box">
-<div class="about-title">🛠 Tech Stack</div>
-
-<div class="tech-category">
-<div class="category-title">Languages</div>
-<div class="tech-stack-grid">
-<div class="tech-box tech-c"><div class="tech-icon">⚙️</div><div class="tech-name">C</div></div>
-<div class="tech-box tech-cpp"><div class="tech-icon">💻</div><div class="tech-name">C++</div></div>
-<div class="tech-box tech-python"><div class="tech-icon">🐍</div><div class="tech-name">Python</div></div>
-<div class="tech-box tech-js"><div class="tech-icon">🌐</div><div class="tech-name">JavaScript</div></div>
-<div class="tech-box tech-ts"><div class="tech-icon">🟦</div><div class="tech-name">TypeScript</div></div>
-</div>
-</div>
-
-<div class="tech-category">
-<div class="category-title">Frontend</div>
-<div class="tech-stack-grid">
-<div class="tech-box tech-html"><div class="tech-icon">📄</div><div class="tech-name">HTML</div></div>
-<div class="tech-box tech-css"><div class="tech-icon">🎨</div><div class="tech-name">CSS</div></div>
-<div class="tech-box tech-react"><div class="tech-icon">⚛️</div><div class="tech-name">React</div></div>
-<div class="tech-box tech-nextjs"><div class="tech-icon">▲</div><div class="tech-name">Next.js</div></div>
-</div>
-</div>
-
-<div class="tech-category">
-<div class="category-title">Backend</div>
-<div class="tech-stack-grid">
-<div class="tech-box tech-node"><div class="tech-icon">🌲</div><div class="tech-name">Node.js</div></div>
-<div class="tech-box tech-fastapi"><div class="tech-icon">⚡</div><div class="tech-name">FastAPI</div></div>
-</div>
-</div>
-
-<div class="tech-category">
-<div class="category-title">Databases</div>
-<div class="tech-stack-grid">
-<div class="tech-box tech-postgresql"><div class="tech-icon">🐘</div><div class="tech-name">PostgreSQL</div></div>
-<div class="tech-box tech-mysql"><div class="tech-icon">🗄️</div><div class="tech-name">MySQL</div></div>
-<div class="tech-box tech-mongodb"><div class="tech-icon">🍃</div><div class="tech-name">MongoDB</div></div>
-</div>
-</div>
-
-<div class="tech-category">
-<div class="category-title">AI / ML</div>
-<div class="tech-stack-grid">
-<div class="tech-box tech-rag"><div class="tech-icon">📚</div><div class="tech-name">RAG</div></div>
-<div class="tech-box tech-llm"><div class="tech-icon">🧠</div><div class="tech-name">LLMs</div></div>
-<div class="tech-box tech-vector"><div class="tech-icon">📐</div><div class="tech-name">Embeddings</div></div>
-<div class="tech-box tech-vectordb"><div class="tech-icon">🔷</div><div class="tech-name">Vector Databases</div></div>
-</div>
-</div>
-
-<div class="tech-category">
-<div class="category-title">Cloud & Tools</div>
-<div class="tech-stack-grid">
-<div class="tech-box tech-aws"><div class="tech-icon">☁️</div><div class="tech-name">AWS</div></div>
-<div class="tech-box tech-git"><div class="tech-icon">🐙</div><div class="tech-name">Git</div></div>
-<div class="tech-box tech-docker"><div class="tech-icon">🐳</div><div class="tech-name">Docker</div></div>
-</div>
-</div>
-</div>
-""", unsafe_allow_html=True)
+    html_content = '<div id="skills" class="about-section-box"><div class="about-title">🛠 Tech Stack</div><div class="tech-category"><div class="category-title">Languages</div><div class="tech-stack-grid"><div class="tech-box tech-c"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"/></div><div class="tech-name">C</div></div><div class="tech-box tech-cpp"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"/></div><div class="tech-name">C++</div></div><div class="tech-box tech-python"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/></div><div class="tech-name">Python</div></div><div class="tech-box tech-js"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/></div><div class="tech-name">JavaScript</div></div><div class="tech-box tech-ts"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"/></div><div class="tech-name">TypeScript</div></div></div></div><div class="tech-category"><div class="category-title">Frontend</div><div class="tech-stack-grid"><div class="tech-box tech-html"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"/></div><div class="tech-name">HTML</div></div><div class="tech-box tech-css"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"/></div><div class="tech-name">CSS</div></div><div class="tech-box tech-react"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"/></div><div class="tech-name">React</div></div><div class="tech-box tech-nextjs"><div class="tech-icon"><img class="tech-logo-img nextjs-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"/></div><div class="tech-name">Next.js</div></div></div></div><div class="tech-category"><div class="category-title">Backend</div><div class="tech-stack-grid"><div class="tech-box tech-node"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"/></div><div class="tech-name">Node.js</div></div><div class="tech-box tech-fastapi"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI"/></div><div class="tech-name">FastAPI</div></div></div></div><div class="tech-category"><div class="category-title">Databases</div><div class="tech-stack-grid"><div class="tech-box tech-postgresql"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"/></div><div class="tech-name">PostgreSQL</div></div><div class="tech-box tech-mysql"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"/></div><div class="tech-name">MySQL</div></div><div class="tech-box tech-mongodb"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"/></div><div class="tech-name">MongoDB</div></div></div></div><div class="tech-category"><div class="category-title">AI / ML</div><div class="tech-stack-grid"><div class="tech-box tech-rag"><div class="tech-icon"><svg class="tech-logo-img" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div><div class="tech-name">RAG</div></div><div class="tech-box tech-llm"><div class="tech-icon"><svg class="tech-logo-img" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1 0-3.12 3 3 0 0 1 0-3.88 2.5 2.5 0 0 1 0-3.12A2.5 2.5 0 0 1 9.5 2Z"></path><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 0-3.12 3 3 0 0 0 0-3.88 2.5 2.5 0 0 0 0-3.12A2.5 2.5 0 0 0 14.5 2Z"></path></svg></div><div class="tech-name">LLMs</div></div><div class="tech-box tech-vector"><div class="tech-icon"><svg class="tech-logo-img" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="3"></line><line x1="4" y1="21" x2="21" y2="21"></line><circle cx="10" cy="14" r="2" fill="#ec4899"></circle><circle cx="17" cy="8" r="2" fill="#ec4899"></circle><line x1="10" y1="14" x2="17" y2="8" stroke-dasharray="3,3"></line></svg></div><div class="tech-name">Embeddings</div></div><div class="tech-box tech-vectordb"><div class="tech-icon"><svg class="tech-logo-img" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5"></path><path d="M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"></path></svg></div><div class="tech-name">Vector Databases</div></div></div></div><div class="tech-category"><div class="category-title">Cloud & Tools</div><div class="tech-stack-grid"><div class="tech-box tech-aws"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"/></div><div class="tech-name">AWS</div></div><div class="tech-box tech-git"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/></div><div class="tech-name">Git</div></div><div class="tech-box tech-docker"><div class="tech-icon"><img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"/></div><div class="tech-name">Docker</div></div></div></div></div>'
+    
+    if hasattr(st, "html"):
+        st.html(html_content)
+    else:
+        st.markdown(html_content, unsafe_allow_html=True)

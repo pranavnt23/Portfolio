@@ -426,6 +426,23 @@ def inject_css():
     .tech-icon {
         font-size: 1.1em;
         vertical-align: middle;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .tech-logo-img {
+        width: 22px !important;
+        height: 22px !important;
+        object-fit: contain !important;
+        vertical-align: middle !important;
+        display: inline-block !important;
+    }
+    /* Invert Next.js logo in dark theme */
+    .tech-logo-img.nextjs-logo {
+        filter: invert(1) brightness(1.5) !important;
+    }
+    .light-theme .tech-logo-img.nextjs-logo {
+        filter: none !important;
     }
     .tech-name {
         font-size: 0.9rem;
